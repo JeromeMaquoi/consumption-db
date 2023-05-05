@@ -1,0 +1,58 @@
+entity Software {
+	name String
+}
+
+entity Release {
+	name String,
+    date Instant,
+    description String
+}
+
+entity Method {
+	name String
+}
+
+entity Consumption {
+	value Long,
+    scope Scope,
+    monitoringType MonitoringType,
+    timestamp Instant
+}
+
+entity Measure {
+	startTimestamp Instant
+}
+
+enum Scope {
+	APP,
+    ALL
+}
+
+enum MonitoringType {
+	EVOLUTION,
+    RUNTIME,
+    TOTAL
+}
+
+relationship OneToMany {
+	Release to Software
+}
+
+relationship OneToOne {
+	Method to Method
+}
+
+relationship ManyToMany {
+	Release to Method
+}
+
+relationship OneToMany {
+	Consumption to Method
+}
+
+relationship OneToMany {
+	Consumption to Measure
+}
+
+
+    
