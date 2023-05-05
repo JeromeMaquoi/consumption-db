@@ -1,0 +1,25 @@
+{
+  "consumptionDbApp": {
+    "consumptionDbSoftware": {
+      "home": {
+        "title": "Software",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Software",
+        "createOrEditLabel": "Create or edit a Software",
+        "notFound": "No Software found"
+      },
+      "created": "A new Software is created with identifier {{ param }}",
+      "updated": "A Software is updated with identifier {{ param }}",
+      "deleted": "A Software is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Software {{ id }}?"
+      },
+      "detail": {
+        "title": "Software"
+      },
+      "id": "ID",
+      "name": "Name",
+      "release": "Release"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "consumptionDbApp": {
+    "MonitoringType": {
+      "null": "",
+      "EVOLUTION": "EVOLUTION",
+      "RUNTIME": "RUNTIME",
+      "TOTAL": "TOTAL"
+    }
+  }
+}

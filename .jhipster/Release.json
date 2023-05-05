@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20230505135405",
+  "clientRootFolder": "consumptionDb",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jhi_release",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "consumptionDb",
+  "name": "Release",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "software",
+      "otherEntityRelationshipName": "release",
+      "relationshipName": "software",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "method",
+      "otherEntityRelationshipName": "release",
+      "ownerSide": true,
+      "relationshipName": "method",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Method.
+    -->
+    <changeSet id="20230505135406-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="method_id"
+                                 baseTableName="method"
+                                 constraintName="fk_method__method_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="method"/>
+
+        <addForeignKeyConstraint baseColumnNames="consumption_id"
+                                 baseTableName="method"
+                                 constraintName="fk_method__consumption_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="consumption"/>
+    </changeSet>
+</databaseChangeLog>

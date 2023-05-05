@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity Release.
+    -->
+    <changeSet id="20230505135405-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="jhi_release_id"
+                                 baseTableName="rel_jhi_release__method"
+                                 constraintName="fk_rel_jhi_release__method__jhi_release_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_release"/>
+
+        <addForeignKeyConstraint baseColumnNames="method_id"
+                                 baseTableName="rel_jhi_release__method"
+                                 constraintName="fk_rel_jhi_release__method__method_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="method"/>
+    </changeSet>
+</databaseChangeLog>

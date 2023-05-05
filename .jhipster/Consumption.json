@@ -1,0 +1,50 @@
+{
+  "applications": "*",
+  "changelogDate": "20230505135407",
+  "clientRootFolder": "consumptionDb",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "consumption",
+  "fields": [
+    {
+      "fieldName": "value",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "scope",
+      "fieldType": "Scope",
+      "fieldValues": "APP,ALL"
+    },
+    {
+      "fieldName": "monitoringType",
+      "fieldType": "MonitoringType",
+      "fieldValues": "EVOLUTION,RUNTIME,TOTAL"
+    },
+    {
+      "fieldName": "timestamp",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "consumptionDb",
+  "name": "Consumption",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "method",
+      "otherEntityRelationshipName": "consumption",
+      "relationshipName": "method",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "measure",
+      "otherEntityRelationshipName": "consumption",
+      "relationshipName": "measure",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}

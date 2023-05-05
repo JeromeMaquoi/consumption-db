@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="release">
+      <h2 data-cy="releaseDetailsHeading"><span jhiTranslate="consumptionDbApp.consumptionDbRelease.detail.title">Release</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ release.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbRelease.name">Name</span></dt>
+        <dd>
+          <span>{{ release.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbRelease.date">Date</span></dt>
+        <dd>
+          <span>{{ release.date | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbRelease.description">Description</span></dt>
+        <dd>
+          <span>{{ release.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbRelease.method">Method</span></dt>
+        <dd>
+          <span *ngFor="let method of release.methods; let last = last">
+            <a [routerLink]="['/method', method.id, 'view']">{{ method.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consumptiondb/release', release.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

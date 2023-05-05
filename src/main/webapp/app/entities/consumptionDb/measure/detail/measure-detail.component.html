@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="measure">
+      <h2 data-cy="measureDetailsHeading"><span jhiTranslate="consumptionDbApp.consumptionDbMeasure.detail.title">Measure</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ measure.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbMeasure.startTimestamp">Start Timestamp</span></dt>
+        <dd>
+          <span>{{ measure.startTimestamp | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbMeasure.consumption">Consumption</span></dt>
+        <dd>
+          <div *ngIf="measure.consumption">
+            <a [routerLink]="['/consumption', measure.consumption.id, 'view']">{{ measure.consumption.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consumptiondb/measure', measure.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

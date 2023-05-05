@@ -1,0 +1,9 @@
+{
+  "consumptionDbApp": {
+    "Scope": {
+      "null": "",
+      "APP": "APP",
+      "ALL": "ALL"
+    }
+  }
+}

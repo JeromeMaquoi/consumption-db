@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="software">
+      <h2 data-cy="softwareDetailsHeading"><span jhiTranslate="consumptionDbApp.consumptionDbSoftware.detail.title">Software</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ software.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbSoftware.name">Name</span></dt>
+        <dd>
+          <span>{{ software.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbSoftware.release">Release</span></dt>
+        <dd>
+          <div *ngIf="software.release">
+            <a [routerLink]="['/release', software.release.id, 'view']">{{ software.release.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consumptiondb/software', software.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

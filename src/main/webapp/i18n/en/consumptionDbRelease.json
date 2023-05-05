@@ -1,0 +1,28 @@
+{
+  "consumptionDbApp": {
+    "consumptionDbRelease": {
+      "home": {
+        "title": "Releases",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Release",
+        "createOrEditLabel": "Create or edit a Release",
+        "notFound": "No Releases found"
+      },
+      "created": "A new Release is created with identifier {{ param }}",
+      "updated": "A Release is updated with identifier {{ param }}",
+      "deleted": "A Release is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Release {{ id }}?"
+      },
+      "detail": {
+        "title": "Release"
+      },
+      "id": "ID",
+      "name": "Name",
+      "date": "Date",
+      "description": "Description",
+      "software": "Software",
+      "method": "Method"
+    }
+  }
+}
