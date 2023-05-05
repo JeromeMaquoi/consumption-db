@@ -27,18 +27,9 @@ public class Method implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnoreProperties(value = { "method", "method", "consumption", "releases" }, allowSetters = true)
-    @OneToOne
     @JoinColumn(unique = true)
     @JsonIgnoreProperties(value = { "method", "method", "consumption", "releases" }, allowSetters = true)
-    @OneToOne(mappedBy = "method")
-    private Method method;
-
-    @JsonIgnoreProperties(value = { "method", "method", "consumption", "releases" }, allowSetters = true)
     @OneToOne
-    @JoinColumn(unique = true)
-    @JsonIgnoreProperties(value = { "method", "method", "consumption", "releases" }, allowSetters = true)
-    @OneToOne(mappedBy = "method")
     private Method method;
 
     @ManyToOne
@@ -76,19 +67,6 @@ public class Method implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Method getMethod() {
-        return this.method;
-    }
-
-    public void setMethod(Method method) {
-        this.method = method;
-    }
-
-    public Method method(Method method) {
-        this.setMethod(method);
-        return this;
     }
 
     public Method getMethod() {
