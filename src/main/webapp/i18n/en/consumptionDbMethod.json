@@ -1,0 +1,28 @@
+{
+  "consumptionDbApp": {
+    "consumptionDbMethod": {
+      "home": {
+        "title": "Methods",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Method",
+        "createOrEditLabel": "Create or edit a Method",
+        "notFound": "No Methods found"
+      },
+      "created": "A new Method is created with identifier {{ param }}",
+      "updated": "A Method is updated with identifier {{ param }}",
+      "deleted": "A Method is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Method {{ id }}?"
+      },
+      "detail": {
+        "title": "Method"
+      },
+      "id": "ID",
+      "name": "Name",
+      "method": "Method",
+      "method": "Method",
+      "consumption": "Consumption",
+      "release": "Release"
+    }
+  }
+}

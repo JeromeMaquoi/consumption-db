@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="consumption">
+      <h2 data-cy="consumptionDetailsHeading">
+        <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.detail.title">Consumption</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ consumption.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbConsumption.value">Value</span></dt>
+        <dd>
+          <span>{{ consumption.value }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbConsumption.scope">Scope</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'consumptionDbApp.Scope.' + consumption.scope }}">{{ consumption.scope }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbConsumption.monitoringType">Monitoring Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'consumptionDbApp.MonitoringType.' + consumption.monitoringType }}">{{ consumption.monitoringType }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbConsumption.timestamp">Timestamp</span></dt>
+        <dd>
+          <span>{{ consumption.timestamp | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consumptiondb/consumption', consumption.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

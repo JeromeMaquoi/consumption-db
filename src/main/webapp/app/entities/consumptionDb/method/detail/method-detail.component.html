@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="method">
+      <h2 data-cy="methodDetailsHeading"><span jhiTranslate="consumptionDbApp.consumptionDbMethod.detail.title">Method</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ method.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbMethod.name">Name</span></dt>
+        <dd>
+          <span>{{ method.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbMethod.method">Method</span></dt>
+        <dd>
+          <div *ngIf="method.method">
+            <a [routerLink]="['/method', method.method.id, 'view']">{{ method.method.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="consumptionDbApp.consumptionDbMethod.consumption">Consumption</span></dt>
+        <dd>
+          <div *ngIf="method.consumption">
+            <a [routerLink]="['/consumption', method.consumption.id, 'view']">{{ method.consumption.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/consumptiondb/method', method.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

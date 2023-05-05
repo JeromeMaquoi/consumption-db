@@ -1,0 +1,25 @@
+{
+  "consumptionDbApp": {
+    "consumptionDbMeasure": {
+      "home": {
+        "title": "Measures",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Measure",
+        "createOrEditLabel": "Créer ou éditer un Measure",
+        "notFound": "Aucun Measure trouvé"
+      },
+      "created": "Un nouveau Measure a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Measure avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Measure avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Measure {{ id }} ?"
+      },
+      "detail": {
+        "title": "Measure"
+      },
+      "id": "ID",
+      "startTimestamp": "Start Timestamp",
+      "consumption": "Consumption"
+    }
+  }
+}

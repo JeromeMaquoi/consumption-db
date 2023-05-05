@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20230505135404",
+  "clientRootFolder": "consumptionDb",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "software",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "consumptionDb",
+  "name": "Software",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "release",
+      "otherEntityRelationshipName": "software",
+      "relationshipName": "release",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

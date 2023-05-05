@@ -1,0 +1,30 @@
+{
+  "applications": "*",
+  "changelogDate": "20230505135408",
+  "clientRootFolder": "consumptionDb",
+  "databaseType": "sql",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "measure",
+  "fields": [
+    {
+      "fieldName": "startTimestamp",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "microserviceName": "consumptionDb",
+  "name": "Measure",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "consumption",
+      "otherEntityRelationshipName": "measure",
+      "relationshipName": "consumption",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

@@ -1,0 +1,109 @@
+<div>
+  <h2 id="page-heading" data-cy="ConsumptionHeading">
+    <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.home.title">Consumptions</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-consumption"
+        [routerLink]="['/consumptiondb/consumption/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.home.createLabel"> Create a new Consumption </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="consumptions?.length === 0">
+    <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.home.notFound">No Consumptions found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="consumptions && consumptions.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="value">
+            <div class="d-flex">
+              <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.value">Value</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="scope">
+            <div class="d-flex">
+              <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.scope">Scope</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="monitoringType">
+            <div class="d-flex">
+              <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.monitoringType">Monitoring Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="timestamp">
+            <div class="d-flex">
+              <span jhiTranslate="consumptionDbApp.consumptionDbConsumption.timestamp">Timestamp</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consumption of consumptions; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/consumptiondb/consumption', consumption.id, 'view']">{{ consumption.id }}</a>
+          </td>
+          <td>{{ consumption.value }}</td>
+          <td jhiTranslate="{{ 'consumptionDbApp.Scope.' + consumption.scope }}">{{ consumption.scope }}</td>
+          <td jhiTranslate="{{ 'consumptionDbApp.MonitoringType.' + consumption.monitoringType }}">{{ consumption.monitoringType }}</td>
+          <td>{{ consumption.timestamp | formatMediumDatetime }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/consumptiondb/consumption', consumption.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/consumptiondb/consumption', consumption.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(consumption)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

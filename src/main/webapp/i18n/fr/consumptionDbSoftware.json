@@ -1,0 +1,25 @@
+{
+  "consumptionDbApp": {
+    "consumptionDbSoftware": {
+      "home": {
+        "title": "Software",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Software",
+        "createOrEditLabel": "Créer ou éditer un Software",
+        "notFound": "Aucun Software trouvé"
+      },
+      "created": "Un nouveau Software a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Software avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Software avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Software {{ id }} ?"
+      },
+      "detail": {
+        "title": "Software"
+      },
+      "id": "ID",
+      "name": "Name",
+      "release": "Release"
+    }
+  }
+}

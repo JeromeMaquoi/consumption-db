@@ -1,0 +1,29 @@
+{
+  "consumptionDbApp": {
+    "consumptionDbConsumption": {
+      "home": {
+        "title": "Consumptions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Consumption",
+        "createOrEditLabel": "Create or edit a Consumption",
+        "notFound": "No Consumptions found"
+      },
+      "created": "A new Consumption is created with identifier {{ param }}",
+      "updated": "A Consumption is updated with identifier {{ param }}",
+      "deleted": "A Consumption is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Consumption {{ id }}?"
+      },
+      "detail": {
+        "title": "Consumption"
+      },
+      "id": "ID",
+      "value": "Value",
+      "scope": "Scope",
+      "monitoringType": "Monitoring Type",
+      "timestamp": "Timestamp",
+      "method": "Method",
+      "measure": "Measure"
+    }
+  }
+}
